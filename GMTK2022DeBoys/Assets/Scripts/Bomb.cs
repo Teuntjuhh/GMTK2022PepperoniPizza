@@ -41,7 +41,7 @@ public class Bomb : MonoBehaviour
 
             if (dest != null)
             {
-                Destroy(dest);
+                dest.DestroyDestructible();
             }
         }
 

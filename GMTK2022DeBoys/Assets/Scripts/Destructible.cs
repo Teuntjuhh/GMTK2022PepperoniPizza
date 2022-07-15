@@ -8,10 +8,8 @@ public class Destructible : MonoBehaviour
     public GameObject destroyedVersion;
 
     // Update is called once per frame
-    void Destroy()
+    public void DestroyDestructible()
     {
-        Instantiate(destroyedVersion, transform.position, transform.rotation);
-
         Destroy(gameObject);
     }
 }
