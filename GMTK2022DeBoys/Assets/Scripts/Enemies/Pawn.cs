@@ -16,9 +16,35 @@ public class Pawn : MonoBehaviour
     private GameObject player;
 
     private float moveDelay = 1;
+    private float moveDuration = 0.25f;
+
+    private int HP = 10;
     private float timeSinceLastMove = 0;
 
-    private float moveDuration = 0.25f;
+    public void ReceiveDamage(int damage)
+    {
+        HP -= damage;
+        if(HP > 0)
+        {
+            StartCoroutine(DamageAnimation());
+        }    
+        else
+        {
+            StartCoroutine(DeathAnimation());
+        }
+    }
+
+    private IEnumerator DamageAnimation()
+    {
+        //TODO
+        yield return null;
+    }
+
+    private IEnumerator DeathAnimation()
+    {
+        //TODO
+        yield return null;
+    }
 
     private void Update()
     {
@@ -55,7 +81,10 @@ public class Pawn : MonoBehaviour
             directionsToGo.Add(Direction.Right);
         }
 
-        StartCoroutine(MoveAnimation(directionsToGo[Random.Range(0, directionsToGo.Count)]));
+        if(directionsToGo.Count > 0)
+        {
+            StartCoroutine(MoveAnimation(directionsToGo[Random.Range(0, directionsToGo.Count)]));
+        }
     }
 
     private IEnumerator MoveAnimation(Direction direction)
