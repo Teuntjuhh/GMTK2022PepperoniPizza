@@ -19,7 +19,10 @@ public class NrOneLaserEye : MonoBehaviour
         //startPoint is point 0 
         laserRenderer.SetPosition(0, startPoint.position);
         RaycastHit hit;
-        if (Physics.Raycast(transform.position, Vector3.forward, out hit)) //-transform.right currently determines the direction of the laser, so change that when cube movement changes
+        Debug.Log(transform.eulerAngles.y);
+
+
+        if (Physics.Raycast(transform.position, transform.forward, out hit)) //transform.forward determines the direction of the laser
         {
             if(hit.collider)
             {
@@ -34,7 +37,7 @@ public class NrOneLaserEye : MonoBehaviour
         else
         {
             //in case the laser never hits anything, stop it at around 5000 ish distance
-            laserRenderer.SetPosition(1, Vector3.forward * 5000);
+            laserRenderer.SetPosition(1, transform.forward * 5000);
         }
     }
 }
