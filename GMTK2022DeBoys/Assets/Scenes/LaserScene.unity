@@ -897,6 +897,8 @@ GameObject:
   - component: {fileID: 2068324119}
   - component: {fileID: 2068324118}
   - component: {fileID: 2068324123}
+  - component: {fileID: 2068324124}
+  - component: {fileID: 2068324125}
   m_Layer: 0
   m_Name: DiceCube
   m_TagString: Untagged
@@ -1089,12 +1091,42 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2068324117}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 516e468eafe6e0741b422db35d369838, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   startPoint: {fileID: 2111507202}
+--- !u!114 &2068324124
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2068324117}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f0063c04c448f23459c8ca50b37c6e65, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  reflections: 18
+  maxLength: 100
+--- !u!114 &2068324125
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2068324117}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e91ce2dacbbe06468a1c22121f825c2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  reflections: 10
+  maxLength: 300
+  laserRenderer: {fileID: 0}
+  direction: {x: 0, y: 0, z: 0}
 --- !u!1 &2111507201
 GameObject:
   m_ObjectHideFlags: 0

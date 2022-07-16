@@ -45,10 +45,11 @@ public class NrOneLaserEye : MonoBehaviour
             }
             if (hit.transform.tag == "Mirror")
             {
-                Ray ray = new Ray(position, direction);
+                laserRenderer.SetPosition(1, hit.point);
                 position = hit.point;
                 direction = Vector3.Reflect(direction, hit.normal);
-                laserRenderer.SetPosition(1, hit.point);
+                Ray ray = new Ray(position, direction);
+                laserRenderer.SetPosition(2, hit.point);
             }
             
             
