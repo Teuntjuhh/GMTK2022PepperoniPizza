@@ -2,27 +2,30 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-enum Direction
-{
-    Up,
-    Down,
-    Left,
-    Right
-}
-
-public class Pawn : MonoBehaviour
+public class Pawn : MonoBehaviour, Enemy
 {
     [SerializeField]
-    private GameObject player;
+    private Player player;
+    private PathFinder pathFinder;
+
+    private int contactDamage = 10;
 
     private float moveDelay = 1;
     private float moveDuration = 0.25f;
+    private float hitDelay = 0.1f;
 
     private int HP = 10;
     private float timeSinceLastMove = 0;
+    private float timeSinceLastHit = 0;
 
     public void ReceiveDamage(int damage)
     {
+        if(timeSinceLastHit < hitDelay)
+        {
+            return;
+        }
+        timeSinceLastHit = 0;
+
         HP -= damage;
         if(HP > 0)
         {
@@ -31,6 +34,19 @@ public class Pawn : MonoBehaviour
         else
         {
             StartCoroutine(DeathAnimation());
+        }
+    }
+
+    private void Start()
+    {
+        pathFinder = GetComponent<PathFinder>();
+    }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        if(collision.gameObject.GetComponent<Player>())
+        {
+            player.ReceiveDamage(contactDamage);
         }
     }
 
@@ -43,51 +59,27 @@ public class Pawn : MonoBehaviour
     private IEnumerator DeathAnimation()
     {
         //TODO
+        Destroy(gameObject);
         yield return null;
     }
 
     private void Update()
     {
+        timeSinceLastHit += Time.deltaTime;
         timeSinceLastMove += Time.deltaTime;
 
         if(timeSinceLastMove >= moveDelay)
         {
-            MoveTile();
+            Direction? nextDirection = pathFinder.NextTile(player.transform.position);
+            if(nextDirection != null)
+            {
+                StartCoroutine(MoveAnimation(nextDirection));
+            }
             timeSinceLastMove = 0;
         }
     }
 
-    private void MoveTile()
-    {
-        List<Direction> directionsToGo = new List<Direction>();
-
-        if((Mathf.Round(transform.position.z) > Mathf.Round(player.transform.position.z)))
-        {
-            directionsToGo.Add(Direction.Down);
-        }
-
-        else if ((Mathf.Round(transform.position.z) < Mathf.Round(player.transform.position.z)))
-        {
-            directionsToGo.Add(Direction.Up);
-        }
-
-        if ((Mathf.Round(transform.position.x) > Mathf.Round(player.transform.position.x)))
-        {
-            directionsToGo.Add(Direction.Left);
-        }
-
-        else if ((Mathf.Round(transform.position.x) < Mathf.Round(player.transform.position.x)))
-        {
-            directionsToGo.Add(Direction.Right);
-        }
-
-        if(directionsToGo.Count > 0)
-        {
-            StartCoroutine(MoveAnimation(directionsToGo[Random.Range(0, directionsToGo.Count)]));
-        }
-    }
-
-    private IEnumerator MoveAnimation(Direction direction)
+    private IEnumerator MoveAnimation(Direction? direction)
     {
         Vector3 targetPosition = new Vector3();
 
