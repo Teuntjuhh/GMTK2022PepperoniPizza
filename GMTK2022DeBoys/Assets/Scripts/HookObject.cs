@@ -42,7 +42,7 @@ public class HookObject : MonoBehaviour
     }
     Vector3 getHookPosition(Vector3 targetPosition)
     {
-        if(player.transform.position.x != targetPosition.x)
+        if(Mathf.Abs(player.transform.position.x + -targetPosition.x) > Mathf.Abs(player.transform.position.z + -targetPosition.z))
         {
             if(player.transform.position.x > targetPosition.x)
             {
@@ -53,7 +53,7 @@ public class HookObject : MonoBehaviour
                 return new Vector3(targetPosition.x - 1, 0.5f, targetPosition.z);
             }
         }
-        else if(player.transform.position.z != targetPosition.z)
+        else if(Mathf.Abs(player.transform.position.z + -targetPosition.z)>1f);
         {
             if(player.transform.position.z > targetPosition.z)
             {
