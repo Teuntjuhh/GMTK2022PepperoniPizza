@@ -110,6 +110,7 @@ GameObject:
   - component: {fileID: 3728654898731041096}
   - component: {fileID: 3728654898731041097}
   - component: {fileID: 3728654898731041098}
+  - component: {fileID: -754675824063446973}
   m_Layer: 0
   m_Name: Bomb
   m_TagString: Untagged
@@ -148,7 +149,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   delay: 3
-  blastRadius: 10
+  blastRadius: 7
   explosiveForce: 1000
   explosionEffect: {fileID: 6192724089161036641, guid: e17d9a3f04750764c8c0a7a0461e4c3b, type: 3}
 --- !u!54 &3728654898731041098
@@ -167,6 +168,19 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!65 &-754675824063446973
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3728654898731041099}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.6231685, y: 0.59314024, z: 0.22199774}
+  m_Center: {x: 0.09432724, y: -0.20342988, z: 0.124301195}
 --- !u!1 &3728654898959688725
 GameObject:
   m_ObjectHideFlags: 0
