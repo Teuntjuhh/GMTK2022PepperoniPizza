@@ -42,10 +42,19 @@ public class LaserEye : MonoBehaviour
         {
             if (Physics.Raycast(ray.origin, ray.direction, out hit, remainingLength))
             {
+                if (hit.transform.tag == "Enemy")
+                {
+                    Destroy(hit.transform.gameObject);
+                }
+                if(hit.transform.tag == "LaserTrigger")
+                {
+                    hit.transform.gameObject.GetComponent<LaserTrigger>().OpenDoor();
+                }
                 laserRenderer.positionCount += 1;
                 laserRenderer.SetPosition(laserRenderer.positionCount - 1, hit.point);
                 remainingLength -= Vector3.Distance(ray.origin, hit.point);
                 ray = new Ray(hit.point, Vector3.Reflect(ray.direction, hit.normal));
+                
                 if (hit.collider.tag != "Mirror")
                 {
                     break;
