@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class NrOneLaserEye : MonoBehaviour
 {
+    int maxBounces = 5;
     private LineRenderer laserRenderer;
     [SerializeField]
     private Transform startPoint;
@@ -18,20 +19,43 @@ public class NrOneLaserEye : MonoBehaviour
     {
         //startPoint is point 0 
         laserRenderer.SetPosition(0, startPoint.position);
+        
+
+        if(Input.GetKeyDown(KeyCode.Alpha1))
+        {
+            laserRenderer.enabled = !laserRenderer.enabled;
+        }
+        if(laserRenderer.enabled)
+        {
+            LaserEye();
+        }
+       
+    }
+    void LaserEye()
+    {
         RaycastHit hit;
-        Debug.Log(transform.eulerAngles.y);
-
-
         if (Physics.Raycast(transform.position, transform.forward, out hit)) //transform.forward determines the direction of the laser
         {
-            if(hit.collider)
+            Vector3 position = transform.position;
+            Vector3 direction = transform.forward;
+
+            if (hit.transform.tag == "Enemy")
+            {
+                Destroy(hit.transform.gameObject);
+            }
+            if (hit.transform.tag == "Mirror")
+            {
+                Ray ray = new Ray(position, direction);
+                position = hit.point;
+                direction = Vector3.Reflect(direction, hit.normal);
+                laserRenderer.SetPosition(1, hit.point);
+            }
+            
+            
+            if (hit.collider)
             {
                 //end point is point 1
                 laserRenderer.SetPosition(1, hit.point);
-            }
-            if(hit.transform.tag == "Enemy")
-            {
-                Destroy(hit.transform.gameObject);
             }
         }
         else
