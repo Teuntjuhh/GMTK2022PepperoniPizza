@@ -8,6 +8,8 @@ public class NrOneLaserEye : MonoBehaviour
     [SerializeField]
     private Transform startPoint;
 
+    private int LaserDamge = 1;
+
     private void Start()
     {
         laserRenderer = GetComponent<LineRenderer>();
@@ -19,7 +21,7 @@ public class NrOneLaserEye : MonoBehaviour
         //startPoint is point 0 
         laserRenderer.SetPosition(0, startPoint.position);
         RaycastHit hit;
-        Debug.Log(transform.eulerAngles.y);
+        //Debug.Log(transform.eulerAngles.y);
 
 
         if (Physics.Raycast(transform.position, transform.forward, out hit)) //transform.forward determines the direction of the laser
@@ -29,9 +31,12 @@ public class NrOneLaserEye : MonoBehaviour
                 //end point is point 1
                 laserRenderer.SetPosition(1, hit.point);
             }
-            if(hit.transform.tag == "Enemy")
+
+            Enemy hitEnemy = hit.transform.GetComponent<Enemy>();
+
+            if(hitEnemy != null)
             {
-                Destroy(hit.transform.gameObject);
+                hitEnemy.ReceiveDamage(LaserDamge);
             }
         }
         else

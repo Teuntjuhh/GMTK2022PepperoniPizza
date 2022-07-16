@@ -40,7 +40,7 @@ public class HookObject : MonoBehaviour
             yield return null;
         }
     }
-    Vector3 getHookPosition(Vector3 targetPosition)
+    Vector3 GetHookPosition(Vector3 targetPosition)
     {
         if(Mathf.Abs(player.transform.position.x + -targetPosition.x) > Mathf.Abs(player.transform.position.z + -targetPosition.z))
         {
@@ -70,9 +70,9 @@ public class HookObject : MonoBehaviour
     {
         hasCollided = true;
         boxCollider.isTrigger = true;
-        Debug.Log(getHookPosition(collision.gameObject.transform.position));
+        Debug.Log(GetHookPosition(collision.gameObject.transform.position));
 
-        StartCoroutine(SmoothLerp(.5f, getHookPosition(collision.gameObject.transform.position)));
+        StartCoroutine(SmoothLerp(.5f, GetHookPosition(collision.gameObject.transform.position)));
     }
     void OnTriggerEnter(Collider other)
     {

@@ -19,7 +19,7 @@ public class HookShot : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Alpha4))
         {
-            GameObject hookClone = Instantiate(hookPrefab, firePoint.transform.position, player.transform.rotation);
+            GameObject hookClone = Instantiate(hookPrefab, firePoint.transform.position, firePoint.transform.rotation);
         }
     }
 }
