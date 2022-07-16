@@ -32,7 +32,7 @@ public class Movement : MonoBehaviour
         InputListener();
         TimeFactor();
        
-        if (!isMoving && inputDirection != Vector3.zero)
+        if (!isMoving && isGrounded && !isBoosting && inputDirection != Vector3.zero)
         {
             Move(inputDirection);
         }
