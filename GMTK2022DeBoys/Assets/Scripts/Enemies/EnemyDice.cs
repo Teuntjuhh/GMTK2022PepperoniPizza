@@ -8,7 +8,7 @@ public class EnemyDice : MonoBehaviour, Enemy
     private Player player;
     private PathFinder pathFinder;
 
-    private float contactDamage = 10;
+    private int contactDamage = 10;
 
     private float moveDelay = 1;
     private float rotationSpeed = 3;
