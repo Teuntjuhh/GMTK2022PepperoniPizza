@@ -7,6 +7,7 @@ public class JetBoost : MonoBehaviour
     public Movement movementScript;
     public Rigidbody rigidbody;
     public float boostAmount;
+    public float maxBoostHeight;
     // Start is called before the first frame update
     void Start()
     {
@@ -24,8 +25,15 @@ public class JetBoost : MonoBehaviour
     {
         if(Input.GetKey(KeyCode.Alpha5))
         {
-            movementScript.isBoosting = true;
-            rigidbody.AddForce(this.transform.forward * boostAmount, ForceMode.Force);
+            if(rigidbody.transform.position.y < maxBoostHeight)
+            {
+                movementScript.isBoosting = true;
+                rigidbody.AddForce(this.transform.forward * boostAmount, ForceMode.Force);
+            }
+            else if(rigidbody.transform.position.y >= maxBoostHeight)
+            {
+                rigidbody.velocity = Vector3.down * 2f;
+            }
         }
         else
         {
