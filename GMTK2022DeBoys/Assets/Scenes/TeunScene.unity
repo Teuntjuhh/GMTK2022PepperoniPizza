@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657844, g: 0.49641222, b: 0.57481694, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -135,6 +135,9 @@ GameObject:
   - component: {fileID: 720598551}
   - component: {fileID: 720598550}
   - component: {fileID: 720598549}
+  - component: {fileID: 720598553}
+  - component: {fileID: 720598555}
+  - component: {fileID: 720598554}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -220,6 +223,58 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &720598553
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 720598548}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6ba50f71eebd3cc4da8c1b2dea999b7e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &720598554
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 720598548}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 546bb18e97eb4e84a8ee62960c4c7715, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rigidbody: {fileID: 720598555}
+  orientation: {fileID: 0}
+  inputDirection: {x: 0, y: 0, z: 0}
+  rotationSpeed: 0
+  gravityScale: 0
+  horizontalInput: 0
+  verticalInput: 0
+  inputTimeH: 0
+  inputTimeV: 0
+  isMoving: 0
+  isGrounded: 0
+  isBoosting: 0
+--- !u!54 &720598555
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 720598548}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1 &1053539569
 GameObject:
   m_ObjectHideFlags: 0
@@ -456,7 +511,7 @@ PrefabInstance:
     - target: {fileID: 6675431726321431082, guid: 66b9eb22e998f7e49b375fde9fce808e, type: 3}
       propertyPath: player
       value: 
-      objectReference: {fileID: 720598548}
+      objectReference: {fileID: 720598553}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 66b9eb22e998f7e49b375fde9fce808e, type: 3}
 --- !u!1001 &7389307061578460382
@@ -472,7 +527,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7389307061599820960, guid: 60b9c1e1f0f175246a23ce234c714540, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: 4.32
       objectReference: {fileID: 0}
     - target: {fileID: 7389307061599820960, guid: 60b9c1e1f0f175246a23ce234c714540, type: 3}
       propertyPath: m_LocalPosition.y
@@ -513,7 +568,7 @@ PrefabInstance:
     - target: {fileID: 7389307061599820964, guid: 60b9c1e1f0f175246a23ce234c714540, type: 3}
       propertyPath: player
       value: 
-      objectReference: {fileID: 720598548}
+      objectReference: {fileID: 720598553}
     - target: {fileID: 7389307061599820967, guid: 60b9c1e1f0f175246a23ce234c714540, type: 3}
       propertyPath: m_Name
       value: Pawn

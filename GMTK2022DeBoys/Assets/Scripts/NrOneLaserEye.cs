@@ -9,7 +9,7 @@ public class NrOneLaserEye : MonoBehaviour
     [SerializeField]
     private Transform startPoint;
 
-    private int LaserDamge = 1;
+    private int LaserDamage = 1;
 
     private void Start()
     {
@@ -43,7 +43,7 @@ public class NrOneLaserEye : MonoBehaviour
 
             if (hit.transform.tag == "Enemy")
             {
-                Destroy(hit.transform.gameObject);
+                hit.transform.GetComponent<Enemy>().ReceiveDamage(LaserDamage);
             }
             if (hit.transform.tag == "Mirror")
             {

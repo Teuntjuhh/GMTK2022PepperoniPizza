@@ -5,9 +5,16 @@ using UnityEngine;
 public class Player : MonoBehaviour
 {
     private int HP = 100;
+    private Rigidbody rigidbody;
 
-    public void ReceiveDamage(int damage)
+    private void Start()
     {
+        rigidbody = GetComponent<Rigidbody>();
+    }
+
+    public void ReceiveDamage(int damage, Vector3 knockBack)
+    {
+        rigidbody.AddForce(knockBack, ForceMode.Impulse);
         HP -= damage;
         if (HP > 0)
         {
@@ -16,7 +23,7 @@ public class Player : MonoBehaviour
         else
         {
             StartCoroutine(DeathAnimation());
-        }
+        }      
     }
     private IEnumerator DamageAnimation()
     {

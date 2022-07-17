@@ -9,6 +9,7 @@ public class EnemyDice : MonoBehaviour, Enemy
     private PathFinder pathFinder;
 
     private int contactDamage = 10;
+    private float knockbackForce = 10;
 
     private float moveDelay = 1;
     private float rotationSpeed = 3;
@@ -67,7 +68,7 @@ public class EnemyDice : MonoBehaviour, Enemy
     {
         if (collision.gameObject.GetComponent<Player>())
         {
-            player.ReceiveDamage(contactDamage);
+            player.ReceiveDamage(contactDamage, (collision.transform.position - transform.position) * knockbackForce);
         }
     }
 
