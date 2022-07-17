@@ -749,6 +749,11 @@ MonoBehaviour:
   rigidbody: {fileID: 8551368409902708645}
   boostAmount: 10
   maxBoostHeight: 4
+  fuel: 0
+  fuelBurnAmount: 0
+  fuelRecoveryRate: 0
+  isBoosting: 0
+  overHeating: 0
 --- !u!1 &8821981655308847822
 GameObject:
   m_ObjectHideFlags: 0
@@ -765,6 +770,7 @@ GameObject:
   - component: {fileID: 8551368409902708647}
   - component: {fileID: 8551368409902708634}
   - component: {fileID: 8551368409902708635}
+  - component: {fileID: 5418080120394230155}
   - component: {fileID: 8551368409902708646}
   m_Layer: 9
   m_Name: DICE CHARACTER 1
@@ -1001,6 +1007,26 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6ba50f71eebd3cc4da8c1b2dea999b7e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &5418080120394230155
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8821981655308847822}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fdafbe1167f0c18449a11c44af2ac869, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 6
+  diceHealth:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
 --- !u!114 &8551368409902708646
 MonoBehaviour:
   m_ObjectHideFlags: 0

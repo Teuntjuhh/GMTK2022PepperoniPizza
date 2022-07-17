@@ -82,7 +82,7 @@ public class HookObject : MonoBehaviour
         }
         else
         {
-            StartCoroutine(SmoothLerp(player ,.5f, GetHookPosition(player.transform.position, collision.gameObject.transform.position)));
+            StartCoroutine(SmoothLerp(player ,.5f, GetHookPosition(player.transform.position, this.transform.position)));
         }
     }
 
