@@ -5,6 +5,7 @@ using UnityEngine;
 public class HookObject : MonoBehaviour
 {
     public GameObject player;
+    public Movement movementScript;
     public float speed;
     public bool hasCollided;
     public BoxCollider boxCollider;
@@ -14,6 +15,7 @@ public class HookObject : MonoBehaviour
         hasCollided = false;
         boxCollider = this.GetComponent<BoxCollider>();
         player = GameObject.FindWithTag("Player");
+        movementScript = player.GetComponent<Movement>();
         StartCoroutine(StartLife(5f));
     }
 
@@ -28,6 +30,7 @@ public class HookObject : MonoBehaviour
     }
     private IEnumerator SmoothLerp(GameObject targetObject, float time, Vector3 target)
     {
+        movementScript.isGrappling = true;
         Vector3 startingPos = targetObject.transform.position;
         Vector3 finalPos = target;
 
@@ -39,7 +42,9 @@ public class HookObject : MonoBehaviour
             elapsedTime += Time.deltaTime;
             yield return null;
         }
-        Destroy(this.gameObject);
+        movementScript.isGrappling = false;
+
+        StartCoroutine(StartLife(1f));
     }
 
     Vector3 GetHookPosition(Vector3 startPosition,Vector3 targetPosition)
@@ -48,22 +53,22 @@ public class HookObject : MonoBehaviour
         {
             if(startPosition.x > targetPosition.x)
             {
-                return new Vector3(targetPosition.x + 1, 0.5f, targetPosition.z);
+                return new Vector3(targetPosition.x + 1, targetPosition.y, targetPosition.z);
             }
             else
             {
-                return new Vector3(targetPosition.x - 1, 0.5f, targetPosition.z);
+                return new Vector3(targetPosition.x - 1, targetPosition.y, targetPosition.z);
             }
         }
         else if(Mathf.Abs(startPosition.z + -targetPosition.z)>1f);
         {
             if(startPosition.z > targetPosition.z)
             {
-                return new Vector3(targetPosition.x, 0.5f, targetPosition.z + 1);
+                return new Vector3(targetPosition.x, targetPosition.y, targetPosition.z + 1);
             }
             else
             {
-                return new Vector3(targetPosition.x, 0.5f, targetPosition.z - 1);
+                return new Vector3(targetPosition.x, targetPosition.y, targetPosition.z - 1);
             }
         }
         return startPosition;
@@ -79,7 +84,7 @@ public class HookObject : MonoBehaviour
         }
         else
         {
-            StartCoroutine(SmoothLerp( player ,.5f, GetHookPosition(player.transform.position, collision.gameObject.transform.position)));
+            StartCoroutine(SmoothLerp(player ,.5f, GetHookPosition(player.transform.position, collision.gameObject.transform.position)));
         }
     }
     void OnTriggerEnter(Collider other)
