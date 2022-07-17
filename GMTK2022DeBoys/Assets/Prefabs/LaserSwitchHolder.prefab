@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 2733037578849030792}
   m_Layer: 0
   m_Name: LaserSwitchHolder
-  m_TagString: Untagged
+  m_TagString: LaserTrigger
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
