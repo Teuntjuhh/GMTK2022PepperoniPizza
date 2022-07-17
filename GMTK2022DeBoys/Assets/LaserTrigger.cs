@@ -5,18 +5,22 @@ using UnityEngine;
 public class LaserTrigger : MonoBehaviour
 {
     public GameObject doorObject;
-
-    Animator animator;
+    public GameObject triggerHolder;
+    Animator triggerAnimator;
+    Animator objectAnimator;
 
     // Start is called before the first frame update
     void Start()
     {
-        animator = doorObject.GetComponent<Animator>();
+        Debug.Log(triggerHolder.name);
+        triggerAnimator = triggerHolder.transform.root.GetComponent<Animator>();
+        objectAnimator = doorObject.GetComponent<Animator>();
     }
 
     public void OpenDoor()
     {
-        animator.SetTrigger("TriggerHit");
+        triggerAnimator.SetTrigger("TriggerHit");
+        objectAnimator.SetTrigger("TriggerHit");
     }
 
 }
