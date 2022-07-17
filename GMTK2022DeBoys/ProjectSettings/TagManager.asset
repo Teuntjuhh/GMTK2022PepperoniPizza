@@ -5,16 +5,18 @@ TagManager:
   serializedVersion: 2
   tags:
   - Enemy
+  - Mirror
+  - LaserTrigger
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - Ground
   - Water
   - UI
+  - Piston
+  - Bomb
   - Player
-  - 
-  - 
   - 
   - 
   - 

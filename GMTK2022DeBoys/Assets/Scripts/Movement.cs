@@ -4,8 +4,11 @@ using UnityEngine;
 
 public class Movement : MonoBehaviour
 {
+    public Rigidbody rigidbody;
+    public GameObject orientation;
     public Vector3 inputDirection;
     public float rotationSpeed;
+    public float gravityScale;
 
     public float horizontalInput;
     public float verticalInput;
@@ -13,16 +16,30 @@ public class Movement : MonoBehaviour
     public float inputTimeV;
 
     public bool isMoving;
+    public bool isGrounded;
+    public bool isBoosting;
 
+    void Start()
+    {
+        rigidbody = this.GetComponent<Rigidbody>();
+    }
+    
     // Update is called once per frame
     void Update()
     {
+        isGrounded = (Physics.Raycast(transform.position, Vector3.down, .55f));
+        
         InputListener();
         TimeFactor();
-        if (!isMoving && inputDirection != Vector3.zero)
+       
+        if (!isMoving && isGrounded && !isBoosting && inputDirection != Vector3.zero)
         {
             Move(inputDirection);
         }
+    }
+    void FixedUpdate()
+    {
+         Gravity();
     }
 
     void Move(Vector3 direction)
@@ -61,6 +78,21 @@ public class Movement : MonoBehaviour
         else
         {
             return inputDirection = new Vector3(horizontalInput, 0, verticalInput);
+        }
+    }
+
+    void Gravity()
+    {
+        if(!isGrounded && !isMoving && !isBoosting)
+        {
+            rigidbody.AddForce(-orientation.transform.up * gravityScale, ForceMode.Force);
+        }
+        else
+        {
+            if(!isBoosting)
+            {
+                rigidbody.velocity = Vector3.zero;
+            }
         }
     }
 
