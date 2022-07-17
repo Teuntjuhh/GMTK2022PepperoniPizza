@@ -7,7 +7,7 @@ using UnityEngine.UI;
 public class Health : MonoBehaviour
 {
     public int health;
-    public Text text;
+    public GameObject[] diceHealth = new GameObject[6]; 
     // Start is called before the first frame update
     void Start()
     {
@@ -22,7 +22,6 @@ public class Health : MonoBehaviour
 
     public void ManageLife()
     {
-        text.text = health.ToString();
         if(health >= 0)
         {
             Death();
@@ -31,6 +30,7 @@ public class Health : MonoBehaviour
     public void TakeDamage()
     {
         health--;
+        diceHealth[health].SetActive(false);
     }
 
     public void Death()
