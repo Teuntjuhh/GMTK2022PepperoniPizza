@@ -12,6 +12,8 @@ public enum Direction
 
 public class PathFinder : MonoBehaviour
 {
+    private int activationRange = 20;
+
     public Direction? NextTile(Vector3 targetPosition)
     {
         List<Direction> directionsToGo = new List<Direction>();
@@ -36,7 +38,7 @@ public class PathFinder : MonoBehaviour
             directionsToGo.Add(Direction.Right);
         }
 
-        if (directionsToGo.Count > 0)
+        if (directionsToGo.Count > 0 && Vector3.Distance(transform.position, targetPosition) < activationRange)
         {
             return directionsToGo[Random.Range(0, directionsToGo.Count)];
         }
