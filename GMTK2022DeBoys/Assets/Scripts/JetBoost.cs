@@ -17,13 +17,13 @@ public class JetBoost : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+
     }
 
     // Update is called once per frame
     void FixedUpdate()
     {
-        if(Input.GetKey(KeyCode.Alpha6))
+        if(Input.GetKey(KeyCode.Alpha5))
         {
             if(rigidbody.transform.position.y < maxBoostHeight)
             {
@@ -41,4 +41,3 @@ public class JetBoost : MonoBehaviour
         }
     }
 }
-

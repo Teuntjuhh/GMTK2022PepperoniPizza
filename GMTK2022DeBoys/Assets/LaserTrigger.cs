@@ -13,7 +13,7 @@ public class LaserTrigger : MonoBehaviour
     void Start()
     {
         Debug.Log(triggerHolder.name);
-        triggerAnimator = triggerHolder.transform.parent.parent.GetComponent<Animator>();
+        triggerAnimator = triggerHolder.transform.GetComponent<Animator>();
         objectAnimator = doorObject.GetComponent<Animator>();
     }
 

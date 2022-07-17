@@ -169,6 +169,7 @@ MonoBehaviour:
   isMoving: 0
   isGrounded: 0
   isBoosting: 0
+  isGrappling: 0
 --- !u!65 &326143521
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1010,6 +1011,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2134017625, guid: 8e0e63ca7a181db4d9e926072eb7d8e2, type: 3}
+      propertyPath: maxBoostHeight
+      value: 4
+      objectReference: {fileID: 0}
     - target: {fileID: 5962609956674133867, guid: 8e0e63ca7a181db4d9e926072eb7d8e2, type: 3}
       propertyPath: m_Name
       value: CameraCube
