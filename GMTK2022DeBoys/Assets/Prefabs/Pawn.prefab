@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 7389307061599820965}
   - component: {fileID: 7389307061599820964}
   - component: {fileID: 3335620502741725316}
+  - component: {fileID: 3382521707393541827}
   m_Layer: 0
   m_Name: Pawn
   m_TagString: Enemy
@@ -73,6 +74,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1d1ba2068a7c32644a3c95c4993cfec1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!54 &3382521707393541827
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7389307061599820967}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1001 &7389307060843470178
 PrefabInstance:
   m_ObjectHideFlags: 0
