@@ -26,25 +26,27 @@ public class HookObject : MonoBehaviour
         }
 
     }
-    private IEnumerator SmoothLerp(float time, Vector3 target)
+    private IEnumerator SmoothLerp(GameObject targetObject, float time, Vector3 target)
     {
-        Vector3 startingPos = player.transform.position;
+        Vector3 startingPos = targetObject.transform.position;
         Vector3 finalPos = target;
 
         float elapsedTime = 0;
     
         while (elapsedTime < time)
         {
-            player.transform.position = Vector3.Lerp(startingPos, finalPos, (elapsedTime / time));
+            targetObject.transform.position = Vector3.Lerp(startingPos, finalPos, (elapsedTime / time));
             elapsedTime += Time.deltaTime;
             yield return null;
         }
+        Destroy(this.gameObject);
     }
-    Vector3 GetHookPosition(Vector3 targetPosition)
+
+    Vector3 GetHookPosition(Vector3 startPosition,Vector3 targetPosition)
     {
-        if(Mathf.Abs(player.transform.position.x + -targetPosition.x) > Mathf.Abs(player.transform.position.z + -targetPosition.z))
+        if(Mathf.Abs(startPosition.x + -targetPosition.x) > Mathf.Abs(startPosition.z + -targetPosition.z))
         {
-            if(player.transform.position.x > targetPosition.x)
+            if(startPosition.x > targetPosition.x)
             {
                 return new Vector3(targetPosition.x + 1, 0.5f, targetPosition.z);
             }
@@ -53,9 +55,9 @@ public class HookObject : MonoBehaviour
                 return new Vector3(targetPosition.x - 1, 0.5f, targetPosition.z);
             }
         }
-        else if(Mathf.Abs(player.transform.position.z + -targetPosition.z)>1f);
+        else if(Mathf.Abs(startPosition.z + -targetPosition.z)>1f);
         {
-            if(player.transform.position.z > targetPosition.z)
+            if(startPosition.z > targetPosition.z)
             {
                 return new Vector3(targetPosition.x, 0.5f, targetPosition.z + 1);
             }
@@ -64,15 +66,21 @@ public class HookObject : MonoBehaviour
                 return new Vector3(targetPosition.x, 0.5f, targetPosition.z - 1);
             }
         }
-        return player.transform.position;
+        return startPosition;
     }
     void OnCollisionEnter(Collision collision)
     {
         hasCollided = true;
         boxCollider.isTrigger = true;
-        Debug.Log(GetHookPosition(collision.gameObject.transform.position));
-
-        StartCoroutine(SmoothLerp(.5f, GetHookPosition(collision.gameObject.transform.position)));
+        this.transform.parent = collision.gameObject.transform;
+        if(collision.gameObject.tag == "Interactable")
+        {
+            StartCoroutine(SmoothLerp(collision.gameObject ,.5f, GetHookPosition(collision.gameObject.transform.position, player.transform.position)));
+        }
+        else
+        {
+            StartCoroutine(SmoothLerp( player ,.5f, GetHookPosition(player.transform.position, collision.gameObject.transform.position)));
+        }
     }
     void OnTriggerEnter(Collider other)
     {
