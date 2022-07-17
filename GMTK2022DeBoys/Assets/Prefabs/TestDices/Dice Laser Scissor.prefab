@@ -600,13 +600,30 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 546bb18e97eb4e84a8ee62960c4c7715, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  rigidbody: {fileID: 0}
+  orientation: {fileID: 0}
   inputDirection: {x: 0, y: 0, z: 0}
   rotationSpeed: 3
+  gravityScale: 0
   horizontalInput: 0
   verticalInput: 0
   inputTimeH: 0
   inputTimeV: 0
   isMoving: 0
+  isGrounded: 0
+  isBoosting: 0
+--- !u!114 &1625474686028268685
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8574494356914063223}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6ba50f71eebd3cc4da8c1b2dea999b7e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &9058262347394850253 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 404262c158e901b4594a63110501f49e, type: 3}

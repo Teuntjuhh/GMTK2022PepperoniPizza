@@ -9,6 +9,7 @@ public class Pawn : MonoBehaviour, Enemy
     private PathFinder pathFinder;
 
     private int contactDamage = 10;
+    private float knockbackForce = 5;
 
     private float moveDelay = 1;
     private float moveDuration = 0.25f;
@@ -46,7 +47,7 @@ public class Pawn : MonoBehaviour, Enemy
     {
         if(collision.gameObject.GetComponent<Player>())
         {
-            player.ReceiveDamage(contactDamage);
+            player.ReceiveDamage(contactDamage, (collision.transform.position - transform.position) * knockbackForce);
         }
     }
 
