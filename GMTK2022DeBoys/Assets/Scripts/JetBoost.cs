@@ -23,7 +23,7 @@ public class JetBoost : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
-        if(Input.GetKey(KeyCode.Alpha5))
+        if(Input.GetKey(KeyCode.Alpha3))
         {
             if(rigidbody.transform.position.y < maxBoostHeight)
             {

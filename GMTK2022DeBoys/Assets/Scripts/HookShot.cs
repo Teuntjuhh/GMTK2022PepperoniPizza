@@ -17,7 +17,7 @@ public class HookShot : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Alpha4))
+        if (Input.GetKeyDown(KeyCode.Alpha5))
         {
             GameObject hookClone = Instantiate(hookPrefab, firePoint.transform.position, firePoint.transform.rotation);
         }

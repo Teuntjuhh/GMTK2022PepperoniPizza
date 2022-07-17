@@ -9,7 +9,7 @@ public class SpawnBomb : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(Input.GetKeyDown(KeyCode.Alpha3) == true)
+        if(Input.GetKeyDown(KeyCode.Alpha6) == true)
         {
             PlaceBomb();
         }
