@@ -23,7 +23,7 @@ public class NrTwoScissors : MonoBehaviour
 
     public void OnCollisionEnter(Collision collision)
     {
-        if (collision.gameObject.tag == "Enemy")
+        if (collision.gameObject.tag == "ScissorSwitch")
         {
             Destroy(collision.gameObject);
         }
