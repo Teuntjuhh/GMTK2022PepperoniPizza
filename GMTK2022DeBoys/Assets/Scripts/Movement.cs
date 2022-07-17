@@ -87,7 +87,7 @@ public class Movement : MonoBehaviour
 
     void Gravity()
     {
-        if(!isGrounded && !isMoving && !isBoosting)
+        if(!isGrounded && !isMoving)
         {
             rigidbody.AddForce(-orientation.transform.up * gravityScale, ForceMode.Force);
         }

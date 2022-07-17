@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 228748737}
   - component: {fileID: 228748738}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: HookOrigin
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -57,7 +57,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2359378023027616938}
   - component: {fileID: 2359378023027616939}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Booster
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -94,7 +94,7 @@ MonoBehaviour:
   movementScript: {fileID: 2359378022661738196}
   rigidbody: {fileID: 2359378022661738197}
   boostAmount: 10
-  maxBoostHeight: 0
+  maxBoostHeight: 4
 --- !u!1 &2359378023595067669
 GameObject:
   m_ObjectHideFlags: 0
@@ -105,7 +105,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2359378023595067670}
   - component: {fileID: 2359378023595067671}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Orientation
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -149,9 +149,10 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6258420162225513429}
-  m_Layer: 0
+  - component: {fileID: 301558857}
+  m_Layer: 7
   m_Name: ShieldOrigin
-  m_TagString: Untagged
+  m_TagString: Shield
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -172,6 +173,21 @@ Transform:
   m_Father: {fileID: 5366379954970322177}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: -90, y: 0, z: 0}
+--- !u!114 &301558857
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3916263140034102357}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 339ee474eedab8a46baab672b966c392, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  shieldObject: {fileID: 5527990153438921382}
+  shieldDuration: 4
+  isShielded: 0
 --- !u!1 &5527990153438921382
 GameObject:
   m_ObjectHideFlags: 0
@@ -185,13 +201,13 @@ GameObject:
   - component: {fileID: 8104851900717590031}
   - component: {fileID: 9148956638100381513}
   - component: {fileID: 2250966006128171759}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Shield
-  m_TagString: Untagged
+  m_TagString: Shield
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &575789216048313761
 Transform:
   m_ObjectHideFlags: 0
@@ -200,8 +216,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5527990153438921382}
   m_LocalRotation: {x: -0, y: 0.7071068, z: -0, w: 0.7071068}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.1, y: 1, z: 1}
+  m_LocalPosition: {x: 0, y: -0, z: 0.008}
+  m_LocalScale: {x: 0.1, y: 1.05, z: 1.05}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 6258420162225513429}
@@ -265,7 +281,7 @@ BoxCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5527990153438921382}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
@@ -282,10 +298,10 @@ Rigidbody:
   m_Drag: 0
   m_AngularDrag: 0.05
   m_UseGravity: 0
-  m_IsKinematic: 1
-  m_Interpolate: 0
-  m_Constraints: 0
-  m_CollisionDetection: 1
+  m_IsKinematic: 0
+  m_Interpolate: 1
+  m_Constraints: 126
+  m_CollisionDetection: 0
 --- !u!1 &8808989063367467091
 GameObject:
   m_ObjectHideFlags: 0
@@ -298,7 +314,7 @@ GameObject:
   - component: {fileID: 8808989063367467103}
   - component: {fileID: 8808989063367467102}
   - component: {fileID: 8808989063367467089}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: ScissorRight
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -393,7 +409,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8808989064063499210}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: ScissorLeftPivot
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -427,7 +443,7 @@ GameObject:
   - component: {fileID: 8808989064476988726}
   - component: {fileID: 8808989064476988724}
   - component: {fileID: 8808989064476988727}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: ScissorOrigin
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -492,7 +508,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8808989064599478740}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: LaserOrigin
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -523,7 +539,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8808989064686616104}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: ScissorRightPivot
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -558,7 +574,7 @@ GameObject:
   - component: {fileID: 8808989064787585698}
   - component: {fileID: 8808989064787585701}
   - component: {fileID: 8808989064787585700}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: ScissorLeft
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -697,7 +713,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 404262c158e901b4594a63110501f49e, type: 3}
       propertyPath: m_Name
-      value: Dice(Boost)
+      value: Dice Character
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 404262c158e901b4594a63110501f49e, type: 3}
+      propertyPath: m_Layer
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 404262c158e901b4594a63110501f49e, type: 3}
       propertyPath: m_IsActive
@@ -870,7 +890,7 @@ MonoBehaviour:
   rigidbody: {fileID: 2359378022661738197}
   orientation: {fileID: 2359378023595067669}
   inputDirection: {x: 0, y: 0, z: 0}
-  rotationSpeed: 3
+  rotationSpeed: 5
   gravityScale: 9.81
   horizontalInput: 0
   verticalInput: 0
@@ -893,6 +913,26 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   startPoint: {fileID: 8808989064599478740}
+--- !u!114 &8808989064326278736
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4698070865763909563}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fdafbe1167f0c18449a11c44af2ac869, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 0
+  diceHealth:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
 --- !u!4 &5366379954970322177 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 404262c158e901b4594a63110501f49e, type: 3}
