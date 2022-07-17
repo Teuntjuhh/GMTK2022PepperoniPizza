@@ -876,7 +876,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 3403b41a1df75dd48ad1e6b8fd0c8ba3, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -914,7 +914,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 338473702}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -0.12, z: 0}
+  m_LocalPosition: {x: -0.5, y: -0.12, z: 0.5}
   m_LocalScale: {x: 10, y: 0.25, z: 10}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1939,6 +1939,14 @@ PrefabInstance:
     - target: {fileID: 2359378023027616939, guid: d8ec2788eef85a746aa891d350237a84, type: 3}
       propertyPath: boostAmount
       value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 2359378023027616939, guid: d8ec2788eef85a746aa891d350237a84, type: 3}
+      propertyPath: fuelBurnAmount
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 2359378023027616939, guid: d8ec2788eef85a746aa891d350237a84, type: 3}
+      propertyPath: fuelRecoveryRate
+      value: 25
       objectReference: {fileID: 0}
     - target: {fileID: 4698070865763909563, guid: d8ec2788eef85a746aa891d350237a84, type: 3}
       propertyPath: m_Name
