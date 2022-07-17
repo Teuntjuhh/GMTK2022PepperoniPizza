@@ -30,7 +30,10 @@ public class Health : MonoBehaviour
     public void TakeDamage()
     {
         health--;
-        diceHealth[health].SetActive(false);
+        if(health>=0)
+        {
+            diceHealth[health].SetActive(false);
+        }
     }
 
     public void Death()
