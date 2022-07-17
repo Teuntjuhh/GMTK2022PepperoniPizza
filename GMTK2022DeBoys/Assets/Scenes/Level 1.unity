@@ -343,7 +343,7 @@ PrefabInstance:
     - target: {fileID: 7389307061599820964, guid: 60b9c1e1f0f175246a23ce234c714540, type: 3}
       propertyPath: player
       value: 
-      objectReference: {fileID: 838879682}
+      objectReference: {fileID: 210424071}
     - target: {fileID: 7389307061599820967, guid: 60b9c1e1f0f175246a23ce234c714540, type: 3}
       propertyPath: m_Name
       value: Pawn (9)
@@ -360,6 +360,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 8416303062866061339, guid: be0a9f221fbf6f043bd24909e86ebabf, type: 3}
   m_PrefabInstance: {fileID: 427460310}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &210424071 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 994915992746428226, guid: abb612b9bb16d8749a64fb3960f69589, type: 3}
+  m_PrefabInstance: {fileID: 1868669318}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6ba50f71eebd3cc4da8c1b2dea999b7e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &274621018
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -560,7 +571,7 @@ PrefabInstance:
     - target: {fileID: 7389307061599820964, guid: 60b9c1e1f0f175246a23ce234c714540, type: 3}
       propertyPath: player
       value: 
-      objectReference: {fileID: 838879682}
+      objectReference: {fileID: 210424071}
     - target: {fileID: 7389307061599820967, guid: 60b9c1e1f0f175246a23ce234c714540, type: 3}
       propertyPath: m_Name
       value: Pawn (3)
@@ -634,7 +645,7 @@ PrefabInstance:
     - target: {fileID: 7389307061599820964, guid: 60b9c1e1f0f175246a23ce234c714540, type: 3}
       propertyPath: player
       value: 
-      objectReference: {fileID: 838879682}
+      objectReference: {fileID: 210424071}
     - target: {fileID: 7389307061599820967, guid: 60b9c1e1f0f175246a23ce234c714540, type: 3}
       propertyPath: m_Name
       value: Pawn
@@ -911,7 +922,7 @@ PrefabInstance:
     - target: {fileID: 7389307061599820964, guid: 60b9c1e1f0f175246a23ce234c714540, type: 3}
       propertyPath: player
       value: 
-      objectReference: {fileID: 838879682}
+      objectReference: {fileID: 210424071}
     - target: {fileID: 7389307061599820967, guid: 60b9c1e1f0f175246a23ce234c714540, type: 3}
       propertyPath: m_Name
       value: Pawn (7)
@@ -985,7 +996,7 @@ PrefabInstance:
     - target: {fileID: 7389307061599820964, guid: 60b9c1e1f0f175246a23ce234c714540, type: 3}
       propertyPath: player
       value: 
-      objectReference: {fileID: 838879682}
+      objectReference: {fileID: 210424071}
     - target: {fileID: 7389307061599820967, guid: 60b9c1e1f0f175246a23ce234c714540, type: 3}
       propertyPath: m_Name
       value: Pawn (4)
@@ -1133,7 +1144,7 @@ PrefabInstance:
     - target: {fileID: 7389307061599820964, guid: 60b9c1e1f0f175246a23ce234c714540, type: 3}
       propertyPath: player
       value: 
-      objectReference: {fileID: 838879682}
+      objectReference: {fileID: 210424071}
     - target: {fileID: 7389307061599820967, guid: 60b9c1e1f0f175246a23ce234c714540, type: 3}
       propertyPath: m_Name
       value: Pawn (2)
@@ -1375,7 +1386,7 @@ PrefabInstance:
     - target: {fileID: 7389307061599820964, guid: 60b9c1e1f0f175246a23ce234c714540, type: 3}
       propertyPath: player
       value: 
-      objectReference: {fileID: 838879682}
+      objectReference: {fileID: 210424071}
     - target: {fileID: 7389307061599820967, guid: 60b9c1e1f0f175246a23ce234c714540, type: 3}
       propertyPath: m_Name
       value: Pawn (8)
@@ -1449,7 +1460,7 @@ PrefabInstance:
     - target: {fileID: 7389307061599820964, guid: 60b9c1e1f0f175246a23ce234c714540, type: 3}
       propertyPath: player
       value: 
-      objectReference: {fileID: 838879682}
+      objectReference: {fileID: 210424071}
     - target: {fileID: 7389307061599820967, guid: 60b9c1e1f0f175246a23ce234c714540, type: 3}
       propertyPath: m_Name
       value: Pawn (6)
@@ -1661,7 +1672,7 @@ PrefabInstance:
     - target: {fileID: 7389307061599820964, guid: 60b9c1e1f0f175246a23ce234c714540, type: 3}
       propertyPath: player
       value: 
-      objectReference: {fileID: 838879682}
+      objectReference: {fileID: 210424071}
     - target: {fileID: 7389307061599820967, guid: 60b9c1e1f0f175246a23ce234c714540, type: 3}
       propertyPath: m_Name
       value: Pawn (5)
@@ -2553,7 +2564,7 @@ PrefabInstance:
     - target: {fileID: 7389307061599820964, guid: 60b9c1e1f0f175246a23ce234c714540, type: 3}
       propertyPath: player
       value: 
-      objectReference: {fileID: 838879682}
+      objectReference: {fileID: 210424071}
     - target: {fileID: 7389307061599820967, guid: 60b9c1e1f0f175246a23ce234c714540, type: 3}
       propertyPath: m_Name
       value: Pawn (1)
