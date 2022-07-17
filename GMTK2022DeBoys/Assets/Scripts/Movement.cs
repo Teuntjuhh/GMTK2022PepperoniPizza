@@ -18,6 +18,7 @@ public class Movement : MonoBehaviour
     public bool isMoving;
     public bool isGrounded;
     public bool isBoosting;
+    public bool isGrappling;
 
     void Start()
     {
@@ -32,14 +33,17 @@ public class Movement : MonoBehaviour
         InputListener();
         TimeFactor();
        
-        if (!isMoving && isGrounded && !isBoosting && inputDirection != Vector3.zero)
+        if (!isMoving && isGrounded && !isBoosting && !isGrappling && inputDirection != Vector3.zero)
         {
             Move(inputDirection);
         }
     }
     void FixedUpdate()
     {
-         Gravity();
+        if(!isGrappling)
+        {
+            Gravity();
+        }
     }
 
     void Move(Vector3 direction)
