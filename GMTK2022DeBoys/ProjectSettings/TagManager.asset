@@ -9,6 +9,7 @@ TagManager:
   - LaserTrigger
   - Interactable
   - Shield
+  - Floor
   layers:
   - Default
   - TransparentFX
@@ -20,7 +21,7 @@ TagManager:
   - Bomb
   - Shield
   - Player
-  - 
+  - Bomb
   - 
   - 
   - 

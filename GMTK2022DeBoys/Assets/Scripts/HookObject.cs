@@ -43,8 +43,6 @@ public class HookObject : MonoBehaviour
             yield return null;
         }
         movementScript.isGrappling = false;
-
-        StartCoroutine(StartLife(1f));
     }
 
     Vector3 GetHookPosition(Vector3 startPosition,Vector3 targetPosition)
@@ -87,13 +85,7 @@ public class HookObject : MonoBehaviour
             StartCoroutine(SmoothLerp(player ,.5f, GetHookPosition(player.transform.position, collision.gameObject.transform.position)));
         }
     }
-    void OnTriggerEnter(Collider other)
-    {
-        if(other.tag =="Player"){
-            Debug.Log("Destroyed");
-            Destroy(this.gameObject);
-        }
-    }
+
     IEnumerator StartLife(float seconds)
     {
         yield return new WaitForSeconds(seconds);

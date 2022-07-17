@@ -50,7 +50,7 @@ public class Bomb : MonoBehaviour
         foreach (Collider nearbyObject in collidersToMove)
         {
             Rigidbody rb = nearbyObject.GetComponent<Rigidbody>();
-            if (rb != null)
+            if (rb != null && nearbyObject.gameObject.tag != "Shield")
             {
                 rb.AddExplosionForce(explosiveForce, transform.position, blastRadius);
             }
